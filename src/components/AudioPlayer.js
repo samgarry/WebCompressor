@@ -1,6 +1,6 @@
 import React from "react";
 import riverAudio from '../audio/try-it-now_nature_Eventually,_all_things_merge_into_one,_and_a_river_runs_through_it_burgh_gentle_stream_12.wav';
-import restaurantAudio from "../audio/try-it-now_restaurant_audio_hero_BarAmbience30Peopl+TE038201_resampled_to_44100_with_Lather_sunscreen_all_over_yourself._mono_normalized_to_-20_resampled_to_44100_new_bitrate_16at_5_0.wav"
+import restaurantAudio from "../audio/try-it-now_restaurant_audio_hero_BarAmbience30Peopl+TE038201_resampled_to_44100_with_Lather_sunscreen_all_over_yourself._mono_normalized_to_-20_resampled_to_44100_new_bitrate_16at_5_0.wav";
 import styles from "../styles/AudioPlayer.module.css";
 import { Sliders } from "./Sliders";
 import { Scenes } from "./Scenes";
@@ -59,7 +59,7 @@ class AudioPlayer extends React.Component {
 
         const prevValue = this.state.playing;
 
-        this.setState({ playing: !prevValue })
+        this.setState({ playing: !prevValue });
         if (!prevValue) { //if playing was false
             this.audioElement.play();
         }

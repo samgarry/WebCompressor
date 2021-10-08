@@ -40,11 +40,11 @@ export const AudioVisualizer = ({ audioData, bufferLength }) => {
 
     //Make the meter draw logarithmically (for dB)
     function logPosition(frequency) {
-        var width_px = 350
+        var width_px = 350;
         var min_f = Math.log(1) / Math.log(10),
             max_f = Math.log(60) / Math.log(10),
             range = max_f - min_f,
-            position_px = (Math.log(frequency) / Math.log(10) - min_f) / range * width_px
+            position_px = (Math.log(frequency) / Math.log(10) - min_f) / range * width_px;
         return position_px;
     }
 

@@ -9,7 +9,6 @@ export const Scenes = (props) => {
 
     function changeButton() {
         if (props.playing) {
-            console.log("got here")
             props.toggleButton();
         }
     }

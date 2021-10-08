@@ -18,10 +18,10 @@ export const Sliders = (props) => {
 
     //ComponentDidMount --- Set progress bars of sliders to default positions 
     useEffect(() => {
-        threshRef.current.style.setProperty('--seek-before-width', `${-rangeConverter(-20, 0, -40, 0, 100) + 100}%`)
-        ratioRef.current.style.setProperty('--seek-before-width', `${logPosition(5)}%`)
-        attRef.current.style.setProperty('--seek-before-width', `${13.333333333333333333333333333}%`)
-        relRef.current.style.setProperty('--seek-before-width', `${25}%`)
+        threshRef.current.style.setProperty('--seek-before-width', `${-rangeConverter(-20, 0, -40, 0, 100) + 100}%`);
+        ratioRef.current.style.setProperty('--seek-before-width', `${logPosition(5)}%`);
+        attRef.current.style.setProperty('--seek-before-width', `${13.333333333333333333333333333}%`);
+        relRef.current.style.setProperty('--seek-before-width', `${25}%`);
     }, [])
 
     //Function for making ratio slider logarithmic 
@@ -70,19 +70,19 @@ export const Sliders = (props) => {
         switch (event.target.id) {
             case "thresh":
                 setThreshAmt(parseFloat(event.target.value).toFixed(2));
-                threshRef.current.style.setProperty('--seek-before-width', `${-rangeConverter(parseFloat(threshRef.current.value).toFixed(2), 0, -40, 0, 100) + 100}%`)
+                threshRef.current.style.setProperty('--seek-before-width', `${-rangeConverter(parseFloat(threshRef.current.value).toFixed(2), 0, -40, 0, 100) + 100}%`);
                 break;
             case "rat":
                 setRatioAmt(parseFloat(logSlider((event.target.value))).toFixed(1));
-                ratioRef.current.style.setProperty('--seek-before-width', `${ratioRef.current.value}%`)
+                ratioRef.current.style.setProperty('--seek-before-width', `${ratioRef.current.value}%`);
                 break;
             case "att":
                 setAttAmt(rangeConverter(event.target.value, 0, 1, 0, 1000));
-                attRef.current.style.setProperty('--seek-before-width', `${rangeConverter(attRef.current.value, 0, 0.75, 0, 100)}%`)
+                attRef.current.style.setProperty('--seek-before-width', `${rangeConverter(attRef.current.value, 0, 0.75, 0, 100)}%`);
                 break;
             case "rel":
                 setRelAmt(rangeConverter(event.target.value, 0, 1, 0, 1000));
-                relRef.current.style.setProperty('--seek-before-width', `${rangeConverter(relRef.current.value, 0, 1, 0, 100)}%`)
+                relRef.current.style.setProperty('--seek-before-width', `${rangeConverter(relRef.current.value, 0, 1, 0, 100)}%`);
                 break;
             default:
                 break;

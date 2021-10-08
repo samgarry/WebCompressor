@@ -35,9 +35,9 @@ export const AudioAnalyser = ({ context, inputNode, playing, playerStarted }) =>
     }, [playerStarted, context, inputNode]);
 
     const tick = useCallback(() => {
-        let dataArray = new Float32Array(analyserRef.current.fftSize)
+        let dataArray = new Float32Array(analyserRef.current.fftSize);
         analyserRef.current.getFloatTimeDomainData(dataArray);
-        setAudioData(dataArray)
+        setAudioData(dataArray);
         if (keepAnimating.current) {
             rafRef.current = requestAnimationFrame(tick); //Animate 
         } else {
