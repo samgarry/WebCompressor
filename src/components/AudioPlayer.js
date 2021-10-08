@@ -40,14 +40,11 @@ class AudioPlayer extends React.Component {
         // Create Compressor Node
         this.compressorNode = new DynamicsCompressorNode(this.audioContext, { threshold: -20, ratio: 5, attack: 0.1 });
 
-        // Create Input Analyser Node
-        this.analyserNode = new AnalyserNode(this.audioContext);
-
         //Start Audio Visualizations
         this.setState({ playerStarted: true });
 
         //Connect the Nodes in the Audio Graph
-        this.track.connect(this.compressorNode).connect(this.analyserNode).connect(this.audioContext.destination);
+        this.track.connect(this.compressorNode).connect(this.audioContext.destination);
     }
 
     //Toggle the play/pause button
