@@ -1,0 +1,30 @@
+.meterVisual {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 50px;
+    height: 275px;
+}
+
+.meter {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%);
+}
+
+
+.overallMeter {
+    position: relative;
+    align-items: center;
+}
+
+.meterLabel {
+    position: absolute;
+    width: 100px;
+    bottom: -375px;
+    font-size:small;
+    left: 50%;
+    transform: translate(-50%);
+}

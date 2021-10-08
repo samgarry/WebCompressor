@@ -1,0 +1,201 @@
+.audioPlayer {
+    --background: #f87cee;
+    --primary: #ffffff;
+    --secondary: #fecddd;
+
+    /* align-items: center; */
+    /* justify-content: center; */
+    display: grid;
+    width: 1000px;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 50px; */
+    margin-bottom: 100px;
+}
+
+.riverImage {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 70px;
+    background-size: cover; /*won't work in ie8 or earlier*/ 
+    /*https://stackoverflow.com/questions/11694175/how-to-make-the-button-image-fill-it*/
+    border: none;
+    transition: transform 250ms;
+    background-image: url("../images/river.jpg");
+}
+
+.restaurantImage {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 70px;
+    background-size: cover; /*won't work in ie8 or earlier*/ 
+    /*https://stackoverflow.com/questions/11694175/how-to-make-the-button-image-fill-it*/
+    border: none;
+    transition: transform 250ms;
+    background-image: url("../images/restaurant.jpeg");
+}
+
+.restaurantImage:hover, .riverImage:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.middleColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.playPause {
+    background: var(--background);
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    font-size: 32px;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.play {
+    position: relative;
+    left: 3px;
+}
+
+.playPause:hover {
+    color: var(--secondary);
+}
+
+.sliderContainer {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.slider {
+    /* --bar-bg: #ffe3d4; */
+    --bar-bg: #ffffff;
+    --seek-before-width: 100px;
+    --seek-before-color: #ffc2a1;
+    /* --knobby: #3452a5; */
+    --selectedKnobby: #26c9c3;
+
+    appearance: none; /* hide default background color of range slider*/
+    background: var(--bar-bg);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 11px;
+    outline: none; /*remove default outline*/
+}
+
+/* .sliderAmount {
+    --seek-before-width: 100px;
+    --seek-before-color: #ffc2a1;
+} */
+
+/* slider for safari */
+.slider::-webkit-slider-runnable-track {
+    background: var(--bar-bg);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 11px;
+    outline: none; /*remove default outline*/
+}
+
+/*slider for firefox */
+.slider::-moz-range-track {
+    background: var(--bar-bg);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 11px;
+    outline: none; /*remove default outline*/
+}
+
+.slider::-moz-focus-outer {
+    border: 0;
+}
+
+/* slider progress for chrome/safari */
+.slider::before {
+    content: ''; /* when using before one must use the content property */
+    height: 11px;
+    width: var(--seek-before-width);
+    /* background-color: var(--seek-before-color); */
+    background-color: var(--background);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* make sure this sits above the progress slider */
+    cursor: pointer;
+}
+
+/* slider progress for firefox */
+.slider::-moz-range-progress {
+    /* background-color: var(--seek-before-color); */
+    background-color: var(--background);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 11px;
+}
+
+/* knobby for chrome/safari */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* remove default styling */
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--background);
+    cursor: pointer;
+    position: relative;
+    margin: -2px 0 0 0;
+    z-index: 3; /* sit on top of progress and main slider */
+    box-sizing: border-box; /* initial default value */
+}
+
+/* knobby while dragging for chrome/safari */
+.slider:active::-webkit-slider-thumb {
+    transform: scale(1.2); /* get a little bigger */
+    background: var(--selectedKnobby);
+}
+
+/* knobby for firefox */
+.slider::moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: transparent;
+    background-color: var(--background);
+    cursor: pointer;
+    position: relative;
+    z-index: 3; /* sit on top of progress and main slider */
+    box-sizing: border-box; /* initial default value */
+}
+
+/* knobby while dragging for firefox */
+.slider:active::moz-range-thumb {
+    transform: scale(1.2); /* get a little bigger */
+    background: var(--selectedKnobby);
+}
